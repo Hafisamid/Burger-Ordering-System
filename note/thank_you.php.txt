@@ -1,0 +1,61 @@
+<?php
+session_start();
+include 'db.php'; // Include your database connection
+
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['last_order_id'])) {
+    header('Location: login.php'); // Redirect if no order ID is found or user is not logged in
+    exit;
+}
+
+$order_id = $_SESSION['last_order_id'];
+$user_id = $_SESSION['user_id'];
+
+// Fetch order details
+$orderStmt = $pdo->prepare("SELECT Order_ID, Order_Date, Total_Price FROM Orders WHERE Order_ID = ? AND User_ID = ?");
+$orderStmt->execute([$order_id, $user_id]);
+$order = $orderStmt->fetch(PDO::FETCH_ASSOC);
+
+// Fetch items in the order
+$itemsStmt = $pdo->prepare("SELECT Menu_ID, Quantity FROM OrderItems WHERE Order_ID = ?");
+$itemsStmt->execute([$order_id]);
+$items = $itemsStmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Optionally, get more details about the items like names and prices from the MenuItem table if needed
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - C&O Burger</title>
+    <link rel="stylesheet" href="stylesthank.css">  <!-- Link to the CSS file -->
+</head>
+<body>
+
+    
+        <?php include 'header.php'; ?>
+    
+    
+
+    <div class="container">
+        <h1>Thank You for Your Order!</h1>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Order ID: <?php echo htmlspecialchars($order['Order_ID']); ?></p>
+            <p>Order Date: <?php echo htmlspecialchars($order['Order_Date']); ?></p>
+            <p>Total Price: RM <?php echo htmlspecialchars($order['Total_Price']); ?></p>
+
+            <h3>Items Ordered:</h3>
+            <ul>
+                <?php foreach ($items as $item): ?>
+                    <li>Item ID: <?php echo htmlspecialchars($item['Menu_ID']); ?>, Quantity: <?php echo htmlspecialchars($item['Quantity']); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
+        <button onclick="window.print();">Print this receipt</button>
+<button onclick="location.href='order.php'" style="background-color: #4CAF50;">Continue Shopping</button>
+
+    </div>
+</body>
+</html>

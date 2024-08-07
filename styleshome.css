@@ -1,0 +1,104 @@
+/* General Body and Typography Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #663339; 
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: block;  
+    margin: 0 auto;  /* Centers the logo horizontally */
+    width:500px;    
+    height: auto;    /* Maintains the aspect ratio of the logo */
+}
+
+.logot {
+    display: block;
+    width: 150px;  /* Adjust the width as needed */
+    height: auto;  /* Maintains the aspect ratio of the logo */
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;  /* Adjust the font size as needed */
+}
+
+
+/* Header and Navigation Styles */
+.header, .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* Hero Section Styles */
+.hero {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Button Styles */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFA500; /* Orange color for buttons */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff8c00; /* Darker orange */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.5em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .hero img {
+        max-width: 300px; /* Smaller max-width for smaller devices */
+    }
+}

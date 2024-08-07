@@ -1,0 +1,57 @@
+<?php
+// Include the database connection file
+include 'db.php';
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $userUsername = $_POST['username'];
+    $userEmail = $_POST['email'];
+    $userPassword = password_hash($_POST['password'], PASSWORD_DEFAULT); // Securely hash the password
+    $userType = $_POST['type'];
+
+    // Prepare an SQL query to insert user data into the database
+    $sql = "INSERT INTO User (Username, Email, Password, Type) VALUES (?, ?, ?, ?)";
+    $stmt = $pdo->prepare($sql);
+
+    // Execute the query and check if the user is successfully registered
+    try {
+        $stmt->execute([$userUsername, $userEmail, $userPassword, $userType]);
+        echo "<script>alert('Registered successfully!');</script>";
+    } catch (PDOException $e) {
+        echo "<script>alert('Registration failed: " . $e->getMessage() . "');</script>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="stylesregister.css">
+</head>
+<body>
+    <form action="register.php" method="post">
+        <div class="company-name">C&O BURGER</div>
+        <h2>Register</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="type">Type:</label>
+        <select name="type" id="type">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+        
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

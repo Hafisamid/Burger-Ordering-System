@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    width: 60%; /* Adjust width to mimic the narrower style in the image */
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #ccc; /* Add border for defined edges */
+}
+
+
+
+h1 {
+    color: #2c3e50;
+    text-align: center; /* Center-align the title */
+}
+
+.order-summary {
+    background-color: #ecf0f1; /* Ensure the background is lighter than the text */
+    color: #333; /* Dark color for text to ensure visibility */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.order-summary h2, .order-summary p {
+    color: #333; /* Dark gray for good contrast */
+}
+
+.order-summary h3 {
+    color: #2c3e50; /* Even darker for the subheading */
+}
+
+.order-summary .total-price {
+    margin-top: 20px;
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    text-align: right; /* Align total price to the right */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 8px 0; /* Slightly more padding for better spacing */
+    display: flex; /* Use flexbox to align items like a table row */
+    justify-content: space-between; /* Distribute space between elements */
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Details for each part of the list item */
+li div {
+    flex: 1; /* Each child takes equal space */
+    text-align: center; /* Center text to mimic table columns */
+}
+
+li div:first-child,
+li div:last-child {
+    flex: 0 0 20%; /* Limit the width of the first and last child */
+    text-align: left; /* Align the first column to the left */
+}
+
+li div:last-child {
+    text-align: right; /* Align the last column to the right */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Full width button */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button {
+    display: block; 
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white;
+    text-align: center; 
+    margin-top: 10px; 
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+p{
+    font-family: Arial, sans-serif;
+    text-decoration-color: black;
+}

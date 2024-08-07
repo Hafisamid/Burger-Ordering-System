@@ -1,0 +1,123 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white; /* Set the text color to white */
+    background-color: #663399; /* Add a background color for better visibility */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cart-content {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+    position: relative; /* Make it relative for the buttons positioning */
+    padding-bottom: 80px; /* Add padding to make space for the buttons */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Add border to table */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: black; /* Set text color to black */
+}
+
+th {
+    background-color: #663399;
+    color: white; /* Keep the text color white for table headers */
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+h2 {
+    color: #663399;
+    margin-top: 20px;
+}
+
+.cart-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-more {
+    background-color: #007bff;
+    color: white;
+}
+
+.add-more:hover {
+    background-color: #0056b3;
+}
+
+.cancel-order {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-order:hover {
+    background-color: #c82333;
+}
+
+.checkout-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout {
+    background-color: #ffc107;
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout:hover {
+    background-color: #e0a800;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #663399;
+    color: white;
+    position: relative;
+    width: 100%;
+}

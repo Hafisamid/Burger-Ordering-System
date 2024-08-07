@@ -1,0 +1,182 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    padding-top: 70px; /* Adjust based on the actual height of your header */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Make container a column to stack filter and content */
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    align-items: center; /* Center items horizontally */
+}
+
+.menu-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between filter buttons and menu items */
+}
+
+.menu-categories {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-categories button {
+    padding: 10px 20px;
+    background-color: #663399;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-categories button:hover {
+    background-color: #5a2f87;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Fixed width for the content */
+    justify-content: center; /* Center the content */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex: 2;
+    max-width: 800px; /* Fixed width for menu items */
+}
+
+.menu-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* Three items per row with gap */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%; /* Make the image take full width of the container */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin-bottom: 10px;
+}
+
+.menu-item h2 {
+    color: #663399;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.menu-item p {
+    color: black; /* Set the price color to black */
+    margin: 10px 0 0 0; /* Add margin to create space below the price */
+}
+
+.order-now {
+    padding: 10px 20px;
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.order-now:hover {
+    background-color: #E03E00;
+}
+
+.menu-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px; /* Fixed width for menu details */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    overflow-y: auto; /* Scroll if content overflows */
+    color: black; /* Ensure text color is black */
+}
+
+.menu-details img {
+    width: 100%; /* Make the image take full width of the container */
+    max-height: 200px; /* Ensure the image does not take more than 200px in height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin-bottom: 10px;
+}
+
+.menu-details h2 {
+    color: #663399;
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.menu-details p {
+    color: black; /* Set the description color to black */
+    margin: 10px 0;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.quantity-selector button {
+    padding: 5px 10px;
+    background-color: #663399;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quantity-selector button:hover {
+    background-color: #5a2f87;
+}
+
+.quantity-selector input {
+    width: 50px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #663399;
+    color: white;
+    position: relative;
+    width: 100%;
+}
